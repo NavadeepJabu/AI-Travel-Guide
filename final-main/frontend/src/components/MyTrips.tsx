@@ -8,7 +8,7 @@ const MyTrips: React.FC = () => {
   const { token } = useAuth();
   const [planned, setPlanned] = useState<Trip[]>([]);
   const [booked, setBooked] = useState<Trip[]>([]);
-  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   useEffect(() => {
     if (!token) return;

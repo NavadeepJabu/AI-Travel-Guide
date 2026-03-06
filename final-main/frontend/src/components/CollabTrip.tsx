@@ -15,7 +15,7 @@ interface CollabTripProps {
     onBack: () => void;
 }
 
-const BACKEND = 'http://localhost:5000';
+const BACKEND = 'https://ai-travel-backend-wyu8.onrender.com';
 
 const CollabTrip: React.FC<CollabTripProps> = ({ shareCode, onBack }) => {
     const [trip, setTrip] = useState<CollabTripData | null>(null);

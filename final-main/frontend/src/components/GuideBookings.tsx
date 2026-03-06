@@ -11,7 +11,7 @@ interface GuideBookingsProps {
 const GuideBookings: React.FC<GuideBookingsProps> = ({ isOpen, onClose }) => {
   const { token } = useAuth();
   const [bookings, setBookings] = useState<any[]>([]);
-  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   useEffect(() => {
     if (!isOpen || !token) return;

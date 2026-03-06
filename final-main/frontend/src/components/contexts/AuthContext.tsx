@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 
-const API_URL = (import.meta as any).env?.VITE_BACKEND_URL ? `${(import.meta as any).env.VITE_BACKEND_URL}/api/auth` : 'http://localhost:5000/api/auth';
+const API_URL = (import.meta as any).env?.VITE_BACKEND_URL ? `${(import.meta as any).env.VITE_BACKEND_URL}/api/auth` : 'https://ai-travel-backend-wyu8.onrender.com/api/auth';
 
 interface User {
   id: string;
@@ -101,7 +101,7 @@ export const AuthProvider = ({ children, showNotification }: AuthProviderProps) 
       // Create guide profile using provided details (no default profiles)
       if (user?.role === 'guide' && guideProfile) {
         try {
-          const base = (import.meta as any).env?.VITE_BACKEND_URL || 'http://localhost:5000';
+          const base = (import.meta as any).env?.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com';
           await axios.post(`${base}/api/guide/guides`, {
             bio: guideProfile.bio,
             services: [{ destination: guideProfile.destination, pricePerTrip: guideProfile.pricePerTrip }],

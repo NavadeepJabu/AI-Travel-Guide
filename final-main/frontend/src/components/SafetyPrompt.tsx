@@ -9,7 +9,7 @@ interface SafetyPromptProps {
 const SafetyPrompt: React.FC<SafetyPromptProps> = ({ planId, token }) => {
   const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(false);
-  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   // Visibility controlled by parent (based on dates) in App; leaving component-only manual toggle disabled
 

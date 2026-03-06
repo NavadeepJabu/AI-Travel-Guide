@@ -82,7 +82,7 @@ const Hotels: React.FC = () => {
 
     setBookingLoading(true);
     try {
-      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+      const backendUrl = import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com';
       // Calculate duration
       const start = new Date(checkInDate);
       const end = new Date(checkOutDate);

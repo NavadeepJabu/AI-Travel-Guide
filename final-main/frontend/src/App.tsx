@@ -128,7 +128,7 @@ function AppContent() {
     setIsBookingTrip(true);
     try {
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const resp = await axios.post('http://localhost:5000/api/bookings', currentTripPlan, config);
+      const resp = await axios.post('https://ai-travel-backend-wyu8.onrender.com/api/bookings', currentTripPlan, config);
       const newBooking: Booking | undefined = resp?.data?.booking;
 
       // Optimized: Parallel wishlist removal for faster execution
@@ -177,7 +177,7 @@ function AppContent() {
           }
           console.log('[SafetyCheck] 3 minutes elapsed with no response - sending emergency email');
           try {
-            await fetch((import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000') + `/api/safety/alert`, {
+            await fetch((import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com') + `/api/safety/alert`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
               body: JSON.stringify({ bookingId: bookingIdSnapshot }),
@@ -251,7 +251,7 @@ function AppContent() {
     try {
       const config = { headers: { Authorization: `Bearer ${token}` } };
       // Updated: Save as booking (Booked status) instead of trip plan (Planned status)
-      const response = await axios.post('http://localhost:5000/api/bookings', planToSave, config);
+      const response = await axios.post('https://ai-travel-backend-wyu8.onrender.com/api/bookings', planToSave, config);
       const newBooking: Booking | undefined = response?.data?.booking;
 
       // Optimized: Parallel wishlist removal for faster execution
@@ -311,7 +311,7 @@ function AppContent() {
       });
       const location = await getLocation();
       const bookingId = currentBooking?._id;
-      await fetch((import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000') + '/api/safety/sos', {
+      await fetch((import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com') + '/api/safety/sos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ bookingId, location }),

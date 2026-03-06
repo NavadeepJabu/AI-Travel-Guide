@@ -4,7 +4,7 @@ import { Destination, WishlistItem } from '../types';
 import { useAuth } from './AuthContext';
 
 // Define the URL for our new wishlist API
-const API_URL = 'http://localhost:5000/api/wishlist';
+const API_URL = 'https://ai-travel-backend-wyu8.onrender.com/api/wishlist';
 
 interface WishlistContextType {
   wishlistItems: WishlistItem[];

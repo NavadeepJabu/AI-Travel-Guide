@@ -13,7 +13,7 @@ const PlansModal: React.FC<PlansModalProps> = ({ isOpen, onClose, onDeleteBookin
   const { token } = useAuth();
   const [plans, setPlans] = useState<any[]>([]);
   const [selected, setSelected] = useState<any | null>(null);
-  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const backendBaseUrl = useMemo(() => import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   useEffect(() => {
     if (!isOpen || !token) return;

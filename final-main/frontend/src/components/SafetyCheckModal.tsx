@@ -68,7 +68,7 @@ const SafetyCheckModal: React.FC<SafetyCheckModalProps> = ({ isOpen, onClose, pl
     
     try {
       // Record safety response
-      await fetch((import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000') + `/api/bookings/${planId}/safety`, {
+      await fetch((import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com') + `/api/bookings/${planId}/safety`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ response: resp }),
@@ -77,7 +77,7 @@ const SafetyCheckModal: React.FC<SafetyCheckModalProps> = ({ isOpen, onClose, pl
       // If user selects "No", send emergency alert email immediately
       if (resp === 'no') {
         console.log('[SafetyCheck] User clicked NO - sending emergency email immediately');
-        await fetch((import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000') + `/api/safety/alert`, {
+        await fetch((import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com') + `/api/safety/alert`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
           body: JSON.stringify({ bookingId: planId }),

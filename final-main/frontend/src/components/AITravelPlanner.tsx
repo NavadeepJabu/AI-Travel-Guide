@@ -94,7 +94,7 @@ export default function AITravelPlanner({ isOpen, onClose }: AITravelPlannerProp
         setSystemMessages([]);
         setAgentStates(initAgentStates());
 
-        const url = `http://localhost:5000/api/ai-planner/stream?destination=${encodeURIComponent(destination)}&days=${encodeURIComponent(days)}&budget=${encodeURIComponent(budget)}`;
+        const url = `https://ai-travel-backend-wyu8.onrender.com/api/ai-planner/stream?destination=${encodeURIComponent(destination)}&days=${encodeURIComponent(days)}&budget=${encodeURIComponent(budget)}`;
 
         const es = new EventSource(url);
         eventSourceRef.current = es;

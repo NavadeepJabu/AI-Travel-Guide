@@ -8,7 +8,7 @@ interface ShareTripModalProps {
     token: string;
 }
 
-const BACKEND = 'http://localhost:5000';
+const BACKEND = 'https://ai-travel-backend-wyu8.onrender.com';
 
 const ShareTripModal: React.FC<ShareTripModalProps> = ({ isOpen, onClose, onCreated, token }) => {
     const [destination, setDestination] = useState('');

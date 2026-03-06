@@ -16,7 +16,7 @@ const Chatbot: React.FC = () => {
 
   const backendBaseUrl = useMemo(() => {
     // Adjust if your backend runs elsewhere
-    return import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+    return import.meta.env.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com';
   }, []);
 
   useEffect(() => {

@@ -66,7 +66,7 @@ const AgentModal: React.FC<AgentModalProps> = ({ isOpen, onClose, agentId }) => 
         setResult('');
 
         try {
-            const resp = await fetch('http://localhost:5000/api/ai-agent', {
+            const resp = await fetch('https://ai-travel-backend-wyu8.onrender.com/api/ai-agent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ agent: agentId, destination, days, budget }),

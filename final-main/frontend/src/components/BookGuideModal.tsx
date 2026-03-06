@@ -15,7 +15,7 @@ const BookGuideModal: React.FC<BookGuideModalProps> = ({ isOpen, onClose, guideI
   const [date, setDate] = useState('');
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
-  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   if (!isOpen || !guideId) return null;
 

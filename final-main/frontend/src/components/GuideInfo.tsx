@@ -15,7 +15,7 @@ const GuideInfo: React.FC<GuideInfoProps> = ({ isOpen, onClose, onBook, initialD
   const [destination, setDestination] = useState('');
   const [guides, setGuides] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
-  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'http://localhost:5000', []);
+  const base = useMemo(() => (import.meta as any).env?.VITE_BACKEND_URL || 'https://ai-travel-backend-wyu8.onrender.com', []);
 
   useEffect(() => {
     if (!isOpen) {

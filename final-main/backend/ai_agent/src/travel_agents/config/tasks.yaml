@@ -1,0 +1,138 @@
+itinerary_planning_task:
+  description: >
+    Create a detailed day-by-day travel itinerary for {destination} over {number_of_days} days.
+    Divide the trip into daily plans with morning, afternoon, and evening activities.
+    Ensure the plan is realistic and geographically efficient.
+    Prioritize popular attractions and local experiences.
+  expected_output: >
+    A structured itinerary with each day clearly labeled and divided into Morning, Afternoon, and Evening sections.
+    Format:
+    Day 1
+    Morning: [activity description]
+    Afternoon: [activity description]
+    Evening: [activity description]
+    
+    Day 2
+    Morning: [activity description]
+    ...
+  agent: itinerary_planner
+
+budget_calculation_task:
+  description: >
+    Calculate a comprehensive travel budget for {destination} over {number_of_days} days.
+    Estimate costs for accommodation, food, transportation, attraction entry fees, and miscellaneous expenses.
+    Consider the user's budget of {user_budget} and provide realistic cost estimates.
+    Research current prices and costs specific to the destination.
+  expected_output: >
+    A detailed budget breakdown in Indian Rupees (₹) with the following format:
+    
+    **Travel Budget Breakdown for {destination} ({number_of_days} days)**
+    
+    **Accommodation:** ₹X,XXX (₹XXX per night)
+    **Food:** ₹X,XXX (₹XXX per day)
+    **Transportation:** ₹X,XXX
+    **Attraction Entry Fees:** ₹X,XXX
+    **Miscellaneous Expenses:** ₹X,XXX
+    
+    **Total Estimated Cost:** ₹XX,XXX
+    **User Budget:** ₹{user_budget}
+    **Budget Status:** [Within Budget/Over Budget by ₹X,XXX]
+    
+    All costs must be in Indian Rupees (₹ / INR). Include brief explanations for each category and money-saving tips if needed.
+  agent: budget_calculator
+
+attractions_recommendation_task:
+  description: >
+    Recommend the most popular and must-visit attractions, food, and experiences in {destination}.
+    Include 5-10 attractions covering historical sites, natural attractions, activities, and local experiences.
+    Provide detailed descriptions for each attraction including what makes it special and why visitors should go.
+    Focus on both iconic landmarks and hidden gems that locals love.
+  expected_output: >
+    A comprehensive list of recommended attractions with the following format:
+    
+    **Top Attractions in {destination}**
+    
+    **Historical Sites:**
+    1. **[Attraction Name]** - [Brief description including historical significance, what to expect, and visitor tips]
+    
+    **Natural Attractions:**
+    2. **[Attraction Name]** - [Brief description including natural features, best time to visit, and activities]
+    
+    **Activities & Experiences:**
+    3. **[Attraction Name]** - [Brief description including what activities are available, duration, and what makes it unique]
+    
+    **Local Food & Cuisine:**
+    4. **[Food/Restaurant Name]** - [Brief description including must-try dishes, atmosphere, and why it's recommended]
+    
+    **Cultural Experiences:**
+    5. **[Experience Name]** - [Brief description including cultural significance, what to expect, and visitor benefits]
+    
+    Include 5-10 total recommendations with practical information like location, best visiting times, and insider tips.
+  agent: attractions_recommender
+
+travel_tips_task:
+  description: >
+    Provide comprehensive travel advice for visitors to {destination}. Include essential tips about local customs, transportation systems, safety considerations, best time to visit, and useful local advice. Focus on practical information that will help travelers navigate the destination confidently, stay safe, respect local culture, and make the most of their visit.
+  expected_output: >
+    A comprehensive travel guide with the following format:
+    
+    **Essential Travel Tips for {destination}**
+    
+    **🏛️ Local Customs & Etiquette:**
+    * [Custom 1] - [Explanation and practical guidance]
+    * [Custom 2] - [Explanation and practical guidance]
+    
+    **🚗 Transportation Guide:**
+    * [Transportation option 1] - [Details, costs, and tips]
+    * [Transportation option 2] - [Details, costs, and tips]
+    
+    **🛡️ Safety & Security:**
+    * [Safety tip 1] - [Specific advice and precautions]
+    * [Safety tip 2] - [Specific advice and precautions]
+    
+    **📅 Best Time to Visit:**
+    * [Season/Month recommendation] - [Weather conditions, crowds, and advantages]
+    * [Season/Month to avoid] - [Reasons and alternatives]
+    
+    **💡 Local Insights & Useful Advice:**
+    * [Local tip 1] - [Practical advice that only locals know]
+    * [Local tip 2] - [Practical advice that only locals know]
+    
+    Include specific, actionable advice that travelers can immediately use to improve their experience.
+  agent: travel_tips_advisor
+
+weather_safety_task:
+  description: >
+    Analyze current and forecasted weather conditions for {destination} to determine travel safety.
+    Use weather data including temperature ranges, precipitation levels, severe weather alerts, and seasonal patterns.
+    Assess how weather conditions might impact travel plans, outdoor activities, and overall safety.
+    Consider both immediate weather conditions and seasonal weather patterns for the destination.
+  expected_output: >
+    A comprehensive weather safety assessment with the following format:
+    
+    **Weather Safety Analysis for {destination}**
+    
+    **🌡️ Current Weather Conditions:**
+    * Temperature: [Current temperature range and comfort level]
+    * Precipitation: [Rainfall/snowfall levels and impact]
+    * Weather Conditions: [Current weather description]
+    
+    **📅 Extended Forecast:**
+    * [Day 1 forecast] - [Conditions and travel impact]
+    * [Day 2-3 forecast] - [Conditions and travel impact]
+    * [Week outlook] - [General pattern and concerns]
+    
+    **⚠️ Weather Alerts & Risks:**
+    * [Any active weather warnings or watches]
+    * [Potential weather-related travel disruptions]
+    * [Seasonal weather considerations]
+    
+    **🛡️ Safety Assessment:**
+    * **Overall Risk Level:** [Safe to visit/Moderate weather risk/Travel not recommended]
+    * **Key Concerns:** [Main weather-related issues to consider]
+    * **Recommended Precautions:** [Specific safety measures and preparations]
+    * **Alternative Activities:** [Indoor backup options if weather is poor]
+    
+    Provide clear, actionable recommendations based on the weather analysis.
+  agent: weather_safety_analyst
+
